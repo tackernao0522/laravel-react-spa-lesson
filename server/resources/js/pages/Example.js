@@ -12,7 +12,7 @@ function Example() {
 
                         <div className="card-body">pages下に移動出来た？？</div>
                         {/* ボタンを追記 */}
-                        <Button color="secondary" variant="contained">ワイがMaterial-UIのボタンやな??</Button>
+                        <Button color="secondary" variant="contained">Homeに遷移ボタン</Button>
                     </div>
                 </div>
             </div>
@@ -22,6 +22,7 @@ function Example() {
 
 export default Example;
 
-if (document.getElementById('app')) {
-    ReactDOM.render(<Example />, document.getElementById('app'));
-}
+// TouchEvent.js側で行えるようになったため、削除
+// if (document.getElementById('app')) {
+//     ReactDOM.render(<Example />, document.getElementById('app'));
+// }

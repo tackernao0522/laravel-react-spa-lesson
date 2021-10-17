@@ -1,7 +1,9 @@
 +--------+----------+-----------------+------+------------------------------------------------+------------+
 | Domain | Method   | URI             | Name | Action                                         | Middleware |
 +--------+----------+-----------------+------+------------------------------------------------+------------+
+|        | POST     | api/edit        |      | App\Http\Controllers\Api\PostController@edit   | api        |
 |        | POST     | api/post/create |      | App\Http\Controllers\Api\PostController@create | api        |
 |        | GET|HEAD | api/posts       |      | App\Http\Controllers\Api\PostController@index  | api        |
+|        | POST     | api/update      |      | App\Http\Controllers\Api\PostController@update | api        |
 |        | GET|HEAD | {any}           |      | Closure                                        | web        |
 +--------+----------+-----------------+------+------------------------------------------------+------------+

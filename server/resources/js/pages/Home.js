@@ -15,21 +15,6 @@ const useStyles = makeStyles((theme) => createStyles({
 // ヘッダーのコンテンツ用の配列の定義
 const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
-let rows = [
-    {
-        name: "モーリー",
-        content: "肩トレ",
-        editBtn: <Button color="secondary" variant="contained">編集</Button>,
-        deleteBtn: <Button color="primary" variant="contained">完了</Button>,
-    }, {
-        name: "ドンキーコング",
-        content: "バナナ補給",
-        editBtn: <Button color="secondary" variant="contained">編集</Button>,
-        deleteBtn: <Button color="primary" variant="contained">完了</Button>,
-
-    }
-];
-
 function Home() {
     // 定義したスタイルを利用するための設定
     const classes = useStyles();
@@ -51,8 +36,20 @@ function Home() {
             })
             .catch(() => {
                 console.log('通信に失敗しました');
-            })
+            });
     }
+
+    // 空配列として定義する
+    let rows = [];
+    // postsの要素毎にrowsで使える形式に変換する
+    posts.map((post) =>
+        rows.push({
+            name: post.name,
+            content: post.content,
+            editBtn: <Button color="secondary" variant="contained">編集</Button>,
+            deleteBtn: <Button color="primary" variant="contained">完了</Button>,
+        })
+    );
 
     return (
         <div className="container">

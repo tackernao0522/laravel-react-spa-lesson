@@ -43,4 +43,13 @@ class PostController extends Controller
 
         return $posts;
     }
+
+    public function delete(Request $request)
+    {
+        $post = Post::find($request->id);
+        $post->delete();
+        $posts = Post::all();
+
+        return $posts;
+    }
 }
